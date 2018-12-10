@@ -3,12 +3,14 @@ title:        "lua chapter 1"
 description:  "The beginning for writing script for Dota2"
 image:        "http://placehold.it/400x200"
 author:       "Bryan"
+toc: true
+toc_label: "Table of Contents"
 ---
 
 0 . The Beginning of Everything
 =
 
-Before writing my very first technical post, I think I have to say something about my blog. 
+Before writing my very first technical post, I think I have to say something about my blog.
 
 I have been thinking about writing a diary a few years ago but I was too lazy to write something down. More importantly I think I am better at writing code than articles. Now I am in Japan for the winter program and get enough time  thinking what I really like to do. I feel that I cannot waste my time watching TV series or playing computer games. So I decide to set up my personal blog and write something. Actually my motivation for writing a blog is to record what I have learned in some areas that I am interested in.
 
@@ -21,7 +23,7 @@ I think I am not a good geek because I am really struggling using [github page](
 
 There are some really useful websites that I recently find.
 
-[VALVE Developer Community for Dota Bot Scripting](https://developer.valvesoftware.com/wiki/Dota_Bot_Scripting) is a very helpful website for developers. I did not think steam provide interfaces for us to develop robot so this is totally surprise for me. It provides a lot of information that I need. I have just look through the website and will read it in detail in the next few weeks. 
+[VALVE Developer Community for Dota Bot Scripting](https://developer.valvesoftware.com/wiki/Dota_Bot_Scripting) is a very helpful website for developers. I did not think steam provide interfaces for us to develop robot so this is totally surprise for me. It provides a lot of information that I need. I have just look through the website and will read it in detail in the next few weeks.
 
 [Dota2 Bot Scripting Forum](http://dev.dota2.com/forumdisplay.php?f=497) is a forum discussing the scripting writing which may be helpful.
 
@@ -30,9 +32,9 @@ In this website it is mentioned that the we must write the scripts in programmin
 2 . Start learning lua
 =
 
-lua is a popular language for computer game robot script and a lot of games like World of Warcraft and Star wars. 
+lua is a popular language for computer game robot script and a lot of games like World of Warcraft and Star wars.
 
-Since I use windows, [luaDist](http://luadist.org/) has the package that I have for my system. Just download it and put it somewhere. Then add this path to the system environment path and you can use it by cmd. 
+Since I use windows, [luaDist](http://luadist.org/) has the package that I have for my system. Just download it and put it somewhere. Then add this path to the system environment path and you can use it by cmd.
 
 [ZeroBrane Studio](https://studio.zerobrane.com/) is an IDE for lua development.
 
@@ -50,13 +52,13 @@ For any questions in Lua, [Lua Reference Manual](https://www.lua.org/manual/5.3/
 * **Global variable**: default variable is global
 
 		b = 10
-* **Local variable**: must be explicitly specified 
+* **Local variable**: must be explicitly specified
 
 		local i j
 * **Table fields**: can hold anything except nil
 
 In single statement, multiple lvalues and rvalues are allowed
-		
+
 	g,l = 20,30
 
 3 . Data types
@@ -75,7 +77,7 @@ Variables don't have types but value has
 
 4 . operator
 -
-Similar to C except 
+Similar to C except
 
 * ~= means not equal
 * use *and*, *or* and *not* for logical operators
@@ -223,7 +225,7 @@ useful string functions can be found in the [manual of string manipulation](http
 
 		array = {"lua","tutor"}
 		for key,value in ipairs(array)
-		do 
+		do
 			print(key, value)
 		end
 
@@ -257,7 +259,7 @@ use *require* to import module, there are several ways to *require* the module a
 	--method 1
 	require "printFormatter"
 	printFormatter.simpleFormat("lua")
-	
+
 	--method 2
 	local formatter = require "printFormatter"
 	formatter.simpleFormat("lua")
@@ -270,7 +272,7 @@ use *require* to import module, there are several ways to *require* the module a
 creating a module
 
 	local mymath = {}
-	
+
 	function mymath.add(a,b)
 		print(a+b)
 	end
@@ -337,4 +339,4 @@ OOP in lua is implemented by adding functions to a table
 		--override printArea
 		function Square:printArea()
 			print("Square", self.area)
-		end 
+		end
